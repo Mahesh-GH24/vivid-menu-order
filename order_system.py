@@ -23,6 +23,9 @@ def place_order(menu):
 
     # Get the menu items mapped to the menu numbers
     menu_items = get_menu_items_dict(menu)
+    # print(menu)
+    # print("-" * 50)
+    # print(menu_items)
 
     # Launch the store and present a greeting to the customer
     print("Welcome to the Generic Take Out Restaurant.")
@@ -41,13 +44,13 @@ def place_order(menu):
         print_menu_heading()
 
         # TODO: Loop through the menu dictionary
-        for meal, data in menu_items():
+        for food_category, data in menu.items():
             # print(meal)
 
         # TODO: Extract the food category and the options for each category
                         
             # TODO: Loop through the options for each food category
-            for food_category, price in menu_items():
+            for meal, price in data.items():
             # TODO: Extract the meal and the price for each option
 
                 # Print the menu item number, food category, meal, and price
@@ -84,7 +87,7 @@ def place_order(menu):
 
             # TODO: Create an order_total from the prices list using sum()
             # TODO: Round the prices to 2 decimal places.
-            order_total = sum(prices_list)
+            order_total = round(sum(prices_list),2)
 
 
             # TODO: Exit the ordering loop
