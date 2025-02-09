@@ -138,7 +138,7 @@ def update_order(order, menu_selection, menu_items):
             # TODO: Use the following names for the dictionary keys:
             # TODO: "Item name", "Price", "Quantity"
             order_placed = {}
-            order_placed["Item name"] = item_name
+            order_placed["Item_Name"] = item_name
             order_placed["Price"] = menu_items["price"]
             order_placed["Quantity"] = menu_items["quantity"]
             order.append(order_placed)
@@ -167,13 +167,15 @@ def print_itemized_receipt(receipt):
     #print(receipt)
 
     # TODO: Loop through the items in the customer's receipt
-
+    for order_item in receipt:
         # TODO Store the dictionary items as variables
-
+        item_name = order_item["Item_Name"]
+        price = order_item["Price"]
+        quantity=order_item["Quantity"]
 
         # TODO: Print the receipt line using the print_receipt_line function
         # TODO: Send the item name, price, and quantity as separate arguments
-
+        print_receipt_line(item_name,price,quantity)
 
 ##################################################
 #  STARTER CODE
